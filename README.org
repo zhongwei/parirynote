@@ -10,7 +10,7 @@
 
 * Arichitecture
 ** Dependencies Diagram
-   #+BEGIN_SRC dot :export both :file ./images/dependencies.png :cmdline -Kdot -Tpng
+   #+BEGIN_SRC dot :exports both :file ./images/dependencies.png :cmdline -Kdot -Tpng
      digraph parity {
        parity->log 
        parity->env_logger 
@@ -28,7 +28,7 @@
 
 * jsonrpc
 ** Modules
-   #+BEGIN_SRC dot :export both :file ./images/jsonrpc-modules.png :cmdline -Kdot -Tpng
+   #+BEGIN_SRC dot :exports both :file ./images/jsonrpc-modules.png :cmdline -Kdot -Tpng
      digraph jsonrpc {
           label="jsonrpc";
           bgcolor="mintcream";
