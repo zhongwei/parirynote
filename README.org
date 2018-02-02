@@ -53,7 +53,7 @@
 ** Json Core   
 *** Dependencies
     
-   #+BEGIN_SRC dot :exports both :file ./images/dependencies.png :cmdline -Kdot -Tpng
+   #+BEGIN_SRC dot :exports both :file ./images/jsoncore-dependencies.png :cmdline -Kdot -Tpng
      digraph jsoncore {
        jsoncore->log 
        jsoncore->futures 
@@ -64,7 +64,7 @@
    #+END_SRC
 
    #+RESULTS:
-   [[file:./images/dependencies.png]]
+   [[file:./images/jsoncore-dependencies.png]]
 
 *** Source Tree
 
