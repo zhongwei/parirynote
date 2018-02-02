@@ -67,7 +67,8 @@
    [[file:./images/dependencies.png]]
 
 *** Source Tree
-    #+BEGIN_QUOTE
+
+   #+BEGIN_SRC
       .
       ├── Cargo.toml
       ├── README.md
@@ -89,5 +90,5 @@
               ├── request.rs
               ├── response.rs
               └── version.rs
-    #+END_QUOTE
+    #+END_SRC
 
