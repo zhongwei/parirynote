@@ -1,0 +1,93 @@
+#+TITLE: Parity Notebook 
+* Table of Contents                                                   :TOC_3:
+- [[#arichitecture][Arichitecture]]
+  - [[#dependencies-diagram][Dependencies Diagram]]
+- [[#jsonrpc][jsonrpc]]
+  - [[#modules][Modules]]
+  - [[#json-core][Json Core]]
+    - [[#dependencies][Dependencies]]
+    - [[#source-tree][Source Tree]]
+
+* Arichitecture
+** Dependencies Diagram
+   #+BEGIN_SRC dot :export both :file ./images/dependencies.png :cmdline -Kdot -Tpng
+     digraph parity {
+       parity->log 
+       parity->env_logger 
+       parity->"rustc\-hex"
+       parity->docopt 
+       parity->clap 
+       parity->term_size 
+       parity->textwrap 
+       parity->time 
+     }
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:./images/dependencies.png]]
+
+* jsonrpc
+** Modules
+   #+BEGIN_SRC dot :export both :file ./images/jsonrpc-modules.png :cmdline -Kdot -Tpng
+     digraph jsonrpc {
+          label="jsonrpc";
+          bgcolor="mintcream";
+          node [shape="Mrecord", color="skyblue", style="filled"];
+          core [label="core"];
+          http [label="http"];
+          ipc [label="ipc"];
+          macros [label="macros"];
+          minihttp [label="minihttp"];
+          pubsub [label="pubsub"];
+          "pubsub/more\-examples" [label="pubsub/more-examples"];
+          "server\-utils" [label="server-utils"];
+          tcp [label="tcp"];
+          test [label="test"];
+          ws [label="ws"];
+     }
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:./images/jsonrpc-modules.png]]
+
+** Json Core   
+*** Dependencies
+    
+   #+BEGIN_SRC dot :export both :file ./images/dependencies.png :cmdline -Kdot -Tpng
+     digraph jsoncore {
+       jsoncore->log 
+       jsoncore->futures 
+       jsoncore->serde 
+       jsoncore->serde_json 
+       jsoncore->serde_derive 
+     }
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:./images/dependencies.png]]
+
+*** Source Tree
+    #+BEGIN_QUOTE
+      .
+      ├── Cargo.toml
+      ├── README.md
+      ├── examples
+      │   ├── async.rs
+      │   ├── basic.rs
+      │   ├── meta.rs
+      │   └── middlewares.rs
+      └── src
+          ├── calls.rs
+          ├── io.rs
+          ├── lib.rs
+          ├── middleware.rs
+          └── types
+              ├── error.rs
+              ├── id.rs
+              ├── mod.rs
+              ├── params.rs
+              ├── request.rs
+              ├── response.rs
+              └── version.rs
+    #+END_QUOTE
+
